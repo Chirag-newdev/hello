@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.png" />
+</head>
+
+<body>
+    <input type="radio" name="nav" id="rad-home" checked>
+    <input type="radio" name="nav" id="rad-about">
+    <input type="radio" name="nav" id="rad-projects">
+    <input type="radio" name="nav" id="rad-contact">
+
+    <div class="monitor">
+        <div class="monitor-screen">
+            <iframe class="page-home" src="pages/home/home.html" frameborder="0"></iframe>
+            <iframe class="page-about" src="pages/about/about.html" frameborder="0"></iframe>
+            <iframe class="page-projects" src="pages/projects/projects.html" frameborder="0"></iframe>
+            <iframe class="page-contact" src="pages/contact/contact.html" frameborder="0"></iframe>
+        </div>
+
+    <div id="time-bar">
+        <div class="bezel-section user-tag">
+            <span id="current-user">[guest@ CHIRAG'sWEBSITE]</span>
+        </div>
+        
+        <div class="bezel-section main-clock">
+            <span id="date-time">APR 01 : 00:00:01</span>
+        </div>
+        
+        <div class="bezel-section controls">
+            <button class="btn-top" onclick="toggleMode()" title="Toggle Display Mode">TOGGLE THEME</button>
+            <button class="btn-top" onclick="hardReload()" title="Hard Reset">RELOAD</button>
+        </div>
+    </div>
+        
+        <div class="button-panel">
+            <label for="rad-home" class="nav-group home-btn">
+                <div class="monitor-btn">HOME</div>
+                <div class="led"></div>
+            </label>
+            
+            <label for="rad-about" class="nav-group about-btn">
+                <div class="monitor-btn">ABOUT</div>
+                <div class="led"></div>
+            </label>
+            
+            <label for="rad-projects" class="nav-group projects-btn">
+                <div class="monitor-btn">PROJECTS</div>
+                <div class="led"></div>
+            </label>
+            
+            <label for="rad-contact" class="nav-group contact-btn">
+                <div class="monitor-btn">CONTACT ME</div>
+                <div class="led"></div>
+            </label>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
