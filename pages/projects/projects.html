@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../progress.css">
+    <title>Projects</title>
+</head>
+<body>
+    <header class="page-header">
+        <h1>Skills & Projects</h1>
+    </header>
+
+    <main class="projects-container">
+        <section class="skills-section reveal">
+            <h2>Technical Skills</h2>
+
+            <div class="skills-wrap">
+
+                <div class="skill-box">
+                    <span>Python</span>
+                </div>
+
+                <div class="skill-box">
+                    <span>C Programming</span>
+                </div>
+
+                <div class="skill-box">
+                    <span>C++</span>
+                </div>
+
+                <div class="skill-box">
+                    <span>Java</span>
+                </div>
+
+                <div class="skill-box">
+                    <span>JavaScript</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-section">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card reveal" style="--grid-span: 2;">
+                    <h3>C - based game - TWIXT</h3>
+                    <div class="project-tags">
+                        <span class="tag">Systems</span>
+                        <span class="tag">C</span>
+                        <span class="tag">Memory-Management</span>
+                        <span class="tag">Graph-Theory</span>
+                    </div>
+                    <p class="project-desc"><strong>What it does:</strong> Designed a terminal based game adhering to the rules of TWIXT that has a solid Win-detection built from scratch.</p>
+                    <p class="project-desc"><strong>Why I built it:</strong> To deepen my fundamental mastery of pointer mathematics and operating system memory layout parameters.</p>
+                    <p class="project-desc"><strong>What I'd change:</strong> I would write a standard win detection logic that is more efficient and add a more robust linkage mechanism.</p>
+                    <p class="project-desc"><strong>Tech Tradeoffs:</strong> Chose C over higher-level languages to gain direct control over memory management and data structures. This improved performance and low-level understanding, but increased debugging complexity and limited GUI support.</p>
+                </article>
+
+                <article class="project-card reveal">
+                    <h3>Agrarian Income Analysis</h3>
+                    <div class="project-tags">
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Economic inequality Analysis</span>
+                        <span class="tag">Graphing and Deconstructing Graphs</span>
+                    </div>
+                    <p class="project-desc"><strong>What it does:</strong> Evaluates rural income datasets in Karnataka using various comparative indicators to analyse potential inequality factors.</p>
+                    <p class="project-desc"><strong>Why I built it:</strong> To satisfy a core Humanities module hypothesis linking effort to emotional investment and productivity to efficient micro-management not larger projects.</p>
+                    <p class="project-desc"><strong>What I'd change:</strong> Use a larger dataset and include non-linear metrics.</p>
+                    <p class="project-desc"><strong>Tech Tradeoffs:</strong> Used Plotly for quick visualization and direct export, which simplified presentation but required intensive manual data filtering and cleaning. The heavy manualreliance makes it easier to control but less scalable.</p>
+                </article>
+
+                <!-- Boilerplate Project 3 -->
+                <article class="project-card reveal">
+                    <h3>C based Shell</h3>
+                    <div class="project-tags">
+                        <span class="tag">Systems</span>
+                        <span class="tag">C</span>
+                        <span class="tag">Operating Systems Concepts</span>
+                        <span class="tag">POSIX</span>
+                        <span class="tag">Process Control</span>
+                    </div>
+                    <p class="project-desc"><strong>What it does:</strong> Executes user commands by implementing core shell functionality such as process creation, piping, and input/output redirection using POSIX system calls.</p>
+                    <p class="project-desc"><strong>Why I built it:</strong> I wanted a shell of my own to better my grasp over low level system programming.</p>
+                    <p class="project-desc"><strong>What I'd change:</strong> use more of the GNU-builtins via forking and focus on calls that affect the shell and a shell-script with functions and aliases.</p>
+                    <p class="project-desc"><strong>Tech Tradeoffs:</strong> Avoided GNU built-ins to better understand low-level shell behavior through manual implementation of process handling and command execution. This improved conceptual clarity and control, but made the system harder to extend with advanced features like variables, functions, and scripting support.</p>
+                </article>
+
+            </div>
+        </section>
+        <p style="text-align:center; padding-top: 2dvh;">Find something interesting? reach out to me <a href="../contact/contact.html" id="link-contact">here</a>.</p>
+    </main>
+
+    <div id="progress-bar-container" class="progress-bar-container">
+        <div id="progress-bar-fill" class="progress-bar-fill"></div>
+    </div>
+    
+    <div id="resume-panel-popup" class="resume-panel-popup hidden">
+        <div>Resume reading where you left off?</div>
+        <div class="actions">
+            <button id="resume-btn-no" class="btn-no">Dismiss</button>
+            <button id="resume-btn-yes" class="btn-yes">Jump to section</button>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../progress.css">
+    <title>About Me</title>
+</head>
+<body>
+
+
+    <section>
+        <div id="left-about">
+
+            <p id="intro-1">
+                I am a first-year <strong>Computational Humanities</strong> student at <strong>IIIT Hyderabad</strong>.
+                My work focuses on Systems, Programming and Machine Learning, with a 
+                particular interest in the mathematical foundations of Linear Algebra, 
+                Graph Theory, and Game Theory. I enjoy problem-solving and am a 
+                competitive programmer; my main preference is to break and build stuff.
+            </p>
+
+            <p id="intro-2">
+                My other interests include delving into economic systems (like the petrodollar), 
+                debating philosophy, reading books, solving puzzles, origami, combinatorics,
+                swimming, and badminton.
+            </p>
+            
+            <ul class="timeline-list">
+
+                <li class="timeline-item alt-left">
+                    <span class="timeline-date">2008</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Born</h3>
+                        <p>Born on 11 - March - 2008.</p>
+                    </div>
+                </li>
+
+                <li class="timeline-item alt-right">
+                    <div class="timeline-content">
+                        <h3>First Public-speaking event</h3>
+                        <p>Participated in an interschool debate and came 2nd.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">2018</span>
+                </li>
+
+                <li class="timeline-item alt-left">
+                    <span class="timeline-date">2018-2019</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>First Academic Merit</h3>
+                        <p>Obtained SOF zonal gold medals in maths and science.</p>
+                    </div> 
+                </li>
+
+                <li class="timeline-item alt-right">
+                    <div class="timeline-content">
+                        <h3>Competed at National Level</h3>
+                        <p>Participated in Indian National Maths Olympiad in grade 11 and developed interest in Problem Solving.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">2024</span>
+                </li>
+
+                <li class="timeline-item alt-left">
+                    <span class="timeline-date">2025</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Joined DD programme at IIITH</h3>
+                        <p>Joined the Computational Humanities Programme at IIITH through UGEE in july, 2025.</p>
+                    </div> 
+                </li>
+
+                <li class="timeline-item alt-right">
+                    <div class="timeline-content">
+                        <h3>First Coding Project</h3>
+                        <p>Built a purely C 2-player + Computer-vs-Player Tic-Tac-Toe using built-in FSM brute-forcing to prevent victory in any case.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">2025</span>
+                </li>
+
+                <li class="timeline-item alt-left">
+                    <span class="timeline-date">2025</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Did my first Humanities Project</h3>
+                        <p>Ran a data analysis on the agrarian income data for a Karnataka sample dataset.</p>
+                    </div>
+                </li>
+
+            </ul>
+
+            <p id="projects">
+                Take a look at the projects I have worked on <a href="../projects/projects.html" id="link-projects">here</a>
+            </p>
+            
+            <p class="contact-line">
+                Interested in a project or want to discuss a topic? 
+                <a href="../contact/contact.html" id="link-contact">Contact me here →</a>
+            </p>
+
+        </div>
+
+        <div id="right-about">
+            <img src="../../images/pfp.jpg" alt="Chirag" class="profile-img">
+        </div>
+    </section>
+
+    <!-- Progress Tracking UI -->
+    <div id="progress-bar-container" class="progress-bar-container">
+        <div id="progress-bar-fill" class="progress-bar-fill"></div>
+    </div>
+    
+    <div id="resume-panel-popup" class="resume-panel-popup hidden">
+        <div>Resume reading where you left off?</div>
+        <div class="actions">
+            <button id="resume-btn-no" class="btn-no">Dismiss</button>
+            <button id="resume-btn-yes" class="btn-yes">Jump to section</button>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

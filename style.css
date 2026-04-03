@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap');
+@import url("../../root.css");
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+
+.monitor {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bezel-color);
+    background-image: radial-gradient(rgba(0, 0, 0, 0.1) calc(1px * var(--scale)), transparent 0);
+    background-size: calc(3px * var(--scale-w)) calc(3px * var(--scale-h));
+    padding:
+        calc(40px * var(--scale-h))
+        calc(30px * var(--scale-w))
+        calc(80px * var(--scale-h))
+        calc(30px * var(--scale-w));
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: scale(0.98);
+    perspective: 1200px;
+    animation: boot-frame 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.monitor-screen {
+    flex-grow: 1;
+    background-color: var(--screen-bg);
+    border: calc(12px * var(--scale)) solid var(--screen-border);
+    border-radius: calc(20px * var(--scale));
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 calc(60px * var(--scale)) rgba(0, 0, 0, 1);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.64, 0.04, 0.35, 1);
+    transform-origin: center;
+    transform-style: preserve-3d;
+    animation: boot-screen 0.8s steps(4) 1.5s forwards;
+}
+
+input[name="nav"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+input[id="rad-home"]:focus-visible ~ .monitor .button-panel .home-btn .monitor-btn,
+input[id="rad-about"]:focus-visible ~ .monitor .button-panel .about-btn .monitor-btn,
+input[id="rad-projects"]:focus-visible ~ .monitor .button-panel .projects-btn .monitor-btn,
+input[id="rad-contact"]:focus-visible ~ .monitor .button-panel .contact-btn .monitor-btn 
+{
+    outline: 2px solid var(--led-on);
+    outline-offset: 4px;
+    background-color: var(--btn-light);
+}
+
+.monitor-screen iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: none;
+}
+
+#rad-home:checked ~ .monitor .monitor-screen .page-home,
+#rad-about:checked ~ .monitor .monitor-screen .page-about,
+#rad-projects:checked ~ .monitor .monitor-screen .page-projects,
+#rad-contact:checked ~ .monitor .monitor-screen .page-contact {
+    display: block;
+}
+
+.button-panel {
+    position: absolute;
+    bottom: 0;
+    right: calc(50px * var(--scale-w));
+    display: flex;
+    gap: calc(25px * var(--scale-w));
+    align-items: flex-end;
+    opacity: 0;
+    transform: translateY(calc(10px * var(--scale-h)));
+    animation: boot-ui 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.5s both;
+}
+
+@keyframes boot-frame {
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes boot-screen {
+    0% { opacity: 0; filter: brightness(3) contrast(2); }
+    20% { opacity: 0.2; }
+    40% { opacity: 0.1; }
+    60% { opacity: 0.7; filter: brightness(1.5); }
+    100% { opacity: 1; filter: brightness(1) contrast(1); }
+}
+
+@keyframes boot-ui {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.led {
+    width: calc(6px * var(--scale));
+    height: calc(6px * var(--scale));
+    background-color: var(--led-off);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 calc(1px * var(--scale)) calc(1px * var(--scale)) rgba(0,0,0,0.5);
+}
+
+#rad-home:checked ~ .monitor .button-panel .home-btn .led,
+#rad-about:checked ~ .monitor .button-panel .about-btn .led,
+#rad-projects:checked ~ .monitor .button-panel .projects-btn .led,
+#rad-contact:checked ~ .monitor .button-panel .contact-btn .led {
+    background-color: var(--led-on);
+    box-shadow:
+        0 0 calc(8px * var(--scale)) var(--led-glow),
+        0 0 calc(12px * var(--scale)) var(--led-glow);
+}
+
+.nav-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(8px * var(--scale-h));
+}
+
+.monitor-btn {
+    appearance: none;
+    border: none;
+    padding:
+        calc(6px * var(--scale-h))
+        calc(12px * var(--scale-w));
+    font-family: var(--font-ui);
+    font-size: calc(10px * var(--scale-w));
+    font-weight: 700;
+    letter-spacing: calc(1px * var(--scale-w));
+    color: var(--text-main);
+    background-color: var(--btn-base);
+    border-radius: calc(3px * var(--scale));
+    cursor: pointer;
+    box-shadow:
+        0 calc(2px * var(--scale)) 0 var(--btn-dark),
+        0 calc(4px * var(--scale)) calc(10px * var(--scale)) rgba(0,0,0,0.3);
+    transition: transform 0.2s cubic-bezier(0.68, -0.6, 0.32, 1.6),
+                box-shadow 0.1s;
+}
+
+.monitor-btn:hover {
+    transform: translateY(calc(-1px * var(--scale-h)));
+}
+
+.monitor-btn:active {
+    transform: translateY(calc(2px * var(--scale-h)));
+    box-shadow:
+        0 0 0 var(--btn-dark),
+        0 calc(2px * var(--scale)) calc(5px * var(--scale)) rgba(0,0,0,0.2);
+}
+
+.nav-group::after {
+    content: "";
+    font-size: calc(8px * var(--scale-w));
+    color: rgba(255,255,255,0.2);
+    margin-top: calc(4px * var(--scale-h));
+    text-transform: uppercase;
+}
+
+#time-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(35px * var(--scale-h));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 calc(40px * var(--scale-w));
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: calc(1px * var(--scale)) solid rgba(255, 255, 255, 0.05);
+    font-family: 'Inter', sans-serif;
+    z-index: 100;
+}
+
+.bezel-section {
+    font-size: calc(10px * var(--scale-w));
+    font-weight: 800;
+    letter-spacing: calc(1px * var(--scale-w));
+    color: rgb(255, 255, 255);
+}
+
+.main-clock {
+    color: var(--led-on);
+    font-size: calc(13px * var(--scale-w));
+    text-shadow: 0 0 calc(5px * var(--scale)) var(--led-on);
+}
+
+.bezel-btn {
+    background: var(--btn-base);
+    border: none;
+    padding:
+        calc(2px * var(--scale-h))
+        calc(8px * var(--scale-w));
+    font-size: calc(9px * var(--scale-w));
+    font-weight: 900;
+    border-radius: calc(2px * var(--scale));
+    cursor: pointer;
+    margin-left: calc(10px * var(--scale-w));
+    color: #333;
+    box-shadow: 0 calc(1px * var(--scale)) 0 var(--btn-dark);
+    transition: all 0.1s;
+}
+
+.bezel-btn:active {
+    transform: translateY(calc(1px * var(--scale-h)));
+    box-shadow: none;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h2>Message Me</h2>
+        <form id="Contact-form" action="#" method="POST">
+            <input id="name" type="text" required placeholder="Name">
+            <input id="email" type="email" required placeholder="Email">
+            <input id="subject" type="text" placeholder="Subject" required>
+            <textarea id="message" placeholder="Message" rows="4"></textarea>
+            <button class="btn">SEND</button>
+        </form>
+        <div id="confirmation-state" style="display: none;" aria-live="polite">
+            <h3 style="color: var(--accent-color); margin-top: 20px;">M✓essage Transmitted Successfully!</h3>
+            <p>Thank you for reaching out. I'll get back to you at the earliest.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Reach me on Social Media</h2>
+        <a href="https://github.com/Chirag-newdev">GitHub</a>
+        <a href="https://www.linkedin.com/in/chirag-goyal-0a615b368">LinkedIn</a>
+        <a href="mailto:chiraggoyalbcs@gmail.com">Email</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+@import url("../../root.css");
+
+body.dark {
+    --bg-color: #111256;
+    --text-main: #e0e0e0;
+    --accent-color: #4db8ff;
+    --secondary-text: var(--border-color);
+    --border-color: #333333;
+    --code-bg: #1e1e1e;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+    padding: 10vh 10vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 4vw;
+    transition: background-color 0.45s cubic-bezier(0.4, 0.0, 0.2, 1), color 0.45s cubic-bezier(0.4, 0.0, 0.2, 1);
+    min-height: 100vh;
+    box-sizing: border-box;
+    align-items: center; /* Center the cards vertically */
+}
+
+.card {
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: 16px;
+    background: var(--code-bg);
+    opacity: 1;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 35px var(--bd-shadow);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, opacity 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle glow effect on hover */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px var(--bd-shadow);
+    border-color: var(--accent-color);
+    opacity: 1; /* Restore crystal clear look on hover */
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card h2 {
+    color: var(--text-main);
+    margin-top: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Inputs styling */
+.inp, input, textarea {
+    width: 100%;
+    background: white;
+    border: 1px solid var(--border-color);
+    color: var(--secondary-text);
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    outline: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.inp:focus, input:focus, textarea:focus { 
+    border-color: var(--accent-color); 
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+body.dark .inp:focus, body.dark input:focus, body.dark textarea:focus {
+    box-shadow: 0 0 0 3px rgba(77, 184, 255, 0.2);
+}
+
+/* Beautiful action button */
+.btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--accent-color), #004d99);
+    filter: brightness(1.1);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .btn {
+    background: linear-gradient(135deg, var(--accent-color), #0088cc);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.25);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Social links styling */
+a { 
+    color: var(--secondary-text); 
+    text-decoration: none; 
+    display: flex; 
+    align-items: center;
+    margin-top: 15px; 
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: var(--bg-color);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+body.dark a {
+    background: var(--text-main);
+}
+
+a::after {
+    content: '→';
+    margin-left: auto;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: var(--accent-color);
+}
+
+a:hover { 
+    color: var(--accent-color);
+    background: var(--bg-color);
+    box-shadow: 0 4px 12px var(--bd-shadow);
+    transform: translateX(5px);
+}
+
+a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}

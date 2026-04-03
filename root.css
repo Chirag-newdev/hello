@@ -1,0 +1,39 @@
+:root {
+    --scale-w: 1;
+    --scale-h: 1;
+    --scale: 1;
+    
+    --font-ui: 'Space Mono', monospace;
+    --font-body: 'Inter', sans-serif;
+
+    --bg-color: #ffffff;
+    --accent-color: #0066cc;
+    --secondary-text: #555555;
+    --border-color: #eeeeee;
+    --code-bg: #f4f4f4;
+    --bd-shadow: rgba(0,0,0,0.1);
+
+
+    --bezel-color: #353535;
+    --screen-bg: #0a0a0a;
+    --screen-border: #1a1a1a;
+    --btn-base: #e0e0e0;
+    --btn-light: #ffffff;
+    --btn-dark: #bdbdbd;
+    --text-main: #222222;
+    --led-off: white;
+    --led-on: #00f2ff;
+    --led-glow: rgba(255, 62, 62, 0.5);
+    
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.5rem;
+
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+}
